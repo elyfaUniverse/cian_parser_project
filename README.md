@@ -116,35 +116,32 @@ metros = metro_parser.metro_stations
 # Или выборочно
 selected_metros = ["devyatkino", "nevskiy-prospekt", "moskovskaya"]
 \`\`\`
-
 ## 🗄️ БАЗА ДАННЫХ
 
 ### Структура таблицы
-\`\`\`sql
-CREATE TABLE cian_offers (
-    cian_id VARCHAR(50) PRIMARY KEY,
-    url TEXT,
-    title TEXT,
-    address TEXT,
-    price NUMERIC(15,2),
-    old_price NUMERIC(15,2),
-    area_total NUMERIC(6,2),
-    area_living VARCHAR(50),
-    area_kitchen VARCHAR(50),
-    floor_current VARCHAR(50),
-    rooms INTEGER,
-    year_built INTEGER,
-    district VARCHAR(200),
-    metro_station VARCHAR(200),
-    metro_time VARCHAR(50),
-    type_building VARCHAR(100),
-    publication_date DATE,
-    is_active BOOLEAN DEFAULT TRUE,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    last_checked TIMESTAMP
-);
-\`\`\`
+| Поле | Тип | Описание |
+|------|-----|----------|
+| cian_id | VARCHAR(50) | Уникальный ID объявления |
+| url | TEXT | Ссылка на объявление |
+| title | TEXT | Заголовок объявления |
+| address | TEXT | Адрес объекта |
+| price | NUMERIC(15,2) | Цена в рублях |
+| old_price | NUMERIC(15,2) | Старая цена (если есть скидка) |
+| area_total | NUMERIC(6,2) | Общая площадь (м²) |
+| area_living | VARCHAR(50) | Жилая площадь |
+| area_kitchen | VARCHAR(50) | Площадь кухни |
+| floor_current | VARCHAR(50) | Этаж (формат "X из Y") |
+| rooms | INTEGER | Количество комнат |
+| year_built | INTEGER | Год постройки дома |
+| district | VARCHAR(200) | Район города |
+| metro_station | VARCHAR(200) | Станция метро |
+| metro_time | VARCHAR(50) | Время до метро |
+| type_building | VARCHAR(100) | Тип дома |
+| publication_date | DATE | Дата публикации |
+| is_active | BOOLEAN | Активно ли объявление |
+| created_at | TIMESTAMP | Дата создания записи |
+| updated_at | TIMESTAMP | Дата обновления |
+| last_checked | TIMESTAMP | Дата последней проверки |
 
 ## 🚨 РЕШЕНИЕ ПРОБЛЕМ
 
@@ -222,5 +219,6 @@ flake8 cian_parser/
 
 💡 *Парсер создан для образовательных целей. Соблюдайте правила использования сайта CIAN.*
 EOF
+
 
 
