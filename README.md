@@ -38,7 +38,6 @@ DB_PASSWORD=ваш_пароль
 bash
 python cian_parser_28.py
 🗂️ СТРУКТУРА ПРОЕКТА
-text
 cian_parser/
 ├── cian_parser_28.py          # Основной скрипт парсера
 ├── database.py                # Работа с PostgreSQL
@@ -191,4 +190,5 @@ flake8 cian_parser/
 Последнее обновление: 18.12.2025
 
 💡 Парсер создан для образовательных целей. Соблюдайте правила использования сайта CIAN.
+
 
