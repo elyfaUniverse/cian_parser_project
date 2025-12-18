@@ -196,7 +196,7 @@ python cian_parser_28.py
 pip install -e .
 
 
-## 📄 ЛИЦЕНЗИЯ
+## 📄 ЛИЦЕНЗИЯ https://github.com/elyfaUniverse/cian_parser_project/blob/main/LICENSE.txt
 
 Проект распространяется под лицензией MIT. Используйте ответственно.
 
@@ -207,6 +207,7 @@ pip install -e .
 
 💡 *Парсер создан для образовательных целей. Соблюдайте правила использования сайта CIAN.*
 EOF
+
 
 
 
