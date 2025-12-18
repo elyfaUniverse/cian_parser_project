@@ -30,6 +30,8 @@ CREATE USER cian_user WITH PASSWORD 'ваш_пароль';
 GRANT ALL PRIVILEGES ON DATABASE cian_parser TO cian_user;
 \`\`\`
 
+
+
 ## Настройка конфигурации
 Отредактируйте \`config.py\` или создайте \`.env\` файл:
 \`\`\`env
@@ -203,6 +205,7 @@ pip install -e .
 
 💡 *Парсер создан для образовательных целей. Соблюдайте правила использования сайта CIAN.*
 EOF
+
 
 
 
