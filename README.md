@@ -13,7 +13,7 @@
 
 ## 🚀 БЫСТРЫЙ СТАРТ
 
-### Установка зависимостей
+## Установка зависимостей
 \`\`\`bash
 python install_deps.py
 \`\`\`
@@ -22,7 +22,7 @@ python install_deps.py
 pip install -r requirements.txt
 \`\`\`
 
-### Настройка базы данных
+## Настройка базы данных
 \`\`\`sql
 -- Создайте базу данных в PostgreSQL
 CREATE DATABASE cian_parser;
@@ -30,7 +30,7 @@ CREATE USER cian_user WITH PASSWORD 'ваш_пароль';
 GRANT ALL PRIVILEGES ON DATABASE cian_parser TO cian_user;
 \`\`\`
 
-### Настройка конфигурации
+## Настройка конфигурации
 Отредактируйте \`config.py\` или создайте \`.env\` файл:
 \`\`\`env
 DB_HOST=localhost
@@ -40,7 +40,7 @@ DB_USER=postgres
 DB_PASSWORD=ваш_пароль
 \`\`\`
 
-### Запуск парсера
+## Запуск парсера
 \`\`\`bash
 python cian_parser_28.py
 \`\`\`
@@ -63,23 +63,23 @@ python cian_parser_28.py
 
 ## 🔧 КЛЮЧЕВЫЕ КЛАССЫ
 
-### MetroParser
+## MetroParser
 \`\`\`python
 # Парсер станций метро Санкт-Петербурга
 metro = MetroParser()
 metro.display_metro_stations()  # Показать все станции
 \`\`\`
 
-### IDCollector (Этап 1)
+## IDCollector (Этап 1)
 \`\`\`python
-# Сбор ID объявлений по станциям метро
+## Сбор ID объявлений по станциям метро
 collector = IDCollector()
 ids = collector.run_collection(metros_to_process=["devyatkino", "grazhdanskiy-prospekt"])
 \`\`\`
 
-### DetailParser (Этап 2)
+## DetailParser (Этап 2)
 \`\`\`python
-# Детальный парсинг собранных объявлений
+## Детальный парсинг собранных объявлений
 parser = DetailParser()
 parser.run_parsing(offers, max_total=1000)
 \`\`\`
@@ -100,7 +100,7 @@ parser.run_parsing(offers, max_total=1000)
 
 ## ⚙️ НАСТРОЙКИ ПАРСИНГА
 
-### Лимиты и задержки
+## Лимиты и задержки
 \`\`\`python
 # В коде можно настроить:
 MAX_PAGES_PER_METRO = 50      # Максимум страниц на станцию
@@ -108,7 +108,7 @@ DELAY_BETWEEN_REQUESTS = 2.5  # Задержка между запросами (
 MAX_TOTAL_OFFERS = 5000       # Максимум объявлений для парсинга
 \`\`\`
 
-### Выбор станций метро
+## Выбор станций метро
 \`\`\`python
 # Все станции СПб автоматически
 metros = metro_parser.metro_stations
@@ -145,20 +145,20 @@ selected_metros = ["devyatkino", "nevskiy-prospekt", "moskovskaya"]
 
 ## 🚨 РЕШЕНИЕ ПРОБЛЕМ
 
-### Ошибка подключения к БД
+## Ошибка подключения к БД
 \`\`\`python
 ### Проверьте настройки в config.py
 ### Убедитесь что PostgreSQL запущен
 ### Проверьте логин и пароль
 \`\`\`
 
-### Ошибка "Element not found"
+## Ошибка "Element not found"
 \`\`\`python
 ### CIAN изменил структуру сайта
 ### Обновите CSS-селекторы в DetailParser
 \`\`\`
 
-### Блокировка IP
+## Блокировка IP
 \`\`\`python
 ### Добавьте задержки между запросами
 ### Используйте прокси-серверы
@@ -174,23 +174,23 @@ python cian_parser_28.py
 
 ## 🔄 РАБОЧИЙ ПРОЦЕСС
 
-### Этап 1 - Сбор ID:
+## Этап 1 - Сбор ID:
 - Запустить сбор по нужным станциям метро
 - ID сохраняются в \`cian_ids.pkl\`
 - Примерное время: 5-10 минут на станцию
 
-### Этап 2 - Детальный парсинг:
+## Этап 2 - Детальный парсинг:
 - Загрузить ID из файла
 - Парсить детальную информацию
 - Сохранять в PostgreSQL
 - Примерное время: 3-5 секунд на объявление
 
 
-### Частые проблемы:
+## Частые проблемы:
 - **Пустая таблица в БД** - проверьте создание таблиц через \`create_table.py\`
 - **Мало объявлений** - увеличьте \`MAX_PAGES_PER_METRO\`
 
-### Для разработчиков:
+## Для разработчиков:
 \`\`\`bash
 # Установить для разработки
 pip install -e .
@@ -207,6 +207,7 @@ pip install -e .
 
 💡 *Парсер создан для образовательных целей. Соблюдайте правила использования сайта CIAN.*
 EOF
+
 
 
 
