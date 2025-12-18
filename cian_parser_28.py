@@ -401,7 +401,7 @@ class DetailParser:
                 port='5432',
                 database='cian_parser_2',
                 user='postgres',
-                password='Mamba123',
+                password='Password',
                 client_encoding='UTF8'
             )
             
