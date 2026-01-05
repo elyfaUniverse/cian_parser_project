@@ -234,7 +234,7 @@ class IDCollector:
                 
                 print(f"  ✅ Найдено: {len(offers)} | Новых: {new_count} | Всего: {len(all_offers)}")
                 
-                if new_count < 3 and page > 5:  # Уменьшил с 5 до 3, увеличил с 3 до 5 страниц
+                if new_count < 3 and page > 5: 
                     print("  ⚠️ Мало новых объявлений, завершаем")
                     break
                 
@@ -327,7 +327,7 @@ class IDCollector:
             print(f"❌ Ошибка загрузки из файла: {e}")
             return []
     
-    def run_collection(self, metros_to_process=None, max_pages_per_metro=50, save_filename="cian_ids.pkl"):  # Увеличил с 15 до 50
+    def run_collection(self, metros_to_process=None, max_pages_per_metro=50, save_filename="cian_ids.pkl"): 
         """Запустить сбор ID"""
         print("\n" + "="*60)
         print("ЭТАП 1: СБОР ID ОБЪЯВЛЕНИЙ")
