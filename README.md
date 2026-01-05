@@ -14,38 +14,31 @@
 ## 🚀 БЫСТРЫЙ СТАРТ
 
 ## Установка зависимостей
-\`\`\`bash
-python install_deps.py
-\`\`\`
+*bash python install_deps.py
 или
-\`\`\`bash
-pip install -r requirements.txt
-\`\`\`
+*bash pip install -r requirements.txt
 
-## Настройка базы данных
-\`\`\`sql
+
+## Настройка базы данных sql
 -- Создайте базу данных в PostgreSQL
 CREATE DATABASE cian_parser;
 CREATE USER cian_user WITH PASSWORD 'ваш_пароль';
 GRANT ALL PRIVILEGES ON DATABASE cian_parser TO cian_user;
-\`\`\`
 
 
 
 ## Настройка конфигурации
 Отредактируйте \`config.py\` или создайте \`.env\` файл:
-\`\`\`env
+*env
 DB_HOST=localhost
 DB_PORT=5432
 DB_NAME=cian_parser
 DB_USER=postgres
 DB_PASSWORD=ваш_пароль
-\`\`\`
 
 ## Запуск парсера
-\`\`\`bash
+*bash
 python cian_parser_28.py
-\`\`\`
 
 ## 🗂️ СТРУКТУРА ПРОЕКТА
 
@@ -66,22 +59,17 @@ python cian_parser_28.py
 # 🔧 КЛЮЧЕВЫЕ КЛАССЫ
 
 ### MetroParser
-\`\`\`
 # Парсер станций метро Санкт-Петербурга
 metro = MetroParser()
 metro.display_metro_stations()  # Показать все станции
-\`\`\`
 
-### IDCollector (Этап 1)
-\`\`\`
-## Сбор ID объявлений по станциям метро
+## IDCollector (Этап 1)
+* Сбор ID объявлений по станциям метро
 collector = IDCollector()
 ids = collector.run_collection(metros_to_process=["devyatkino", "grazhdanskiy-prospekt"])
-\`\`\`
 
-### DetailParser (Этап 2)
-\`\`\`
-### Детальный парсинг собранных объявлений
+## DetailParser (Этап 2)
+*Детальный парсинг собранных объявлений
 parser = DetailParser()
 parser.run_parsing(offers, max_total=1000)
 \`\`\`
@@ -103,20 +91,19 @@ parser.run_parsing(offers, max_total=1000)
 # ⚙️ НАСТРОЙКИ ПАРСИНГА
 
 ## Лимиты и задержки
-### В коде можно настроить:
+* В коде можно настроить:
 MAX_PAGES_PER_METRO = 50      # Максимум страниц на станцию
 DELAY_BETWEEN_REQUESTS = 2.5  # Задержка между запросами (сек)
 MAX_TOTAL_OFFERS = 5000       # Максимум объявлений для парсинга
 
-## Выбор станций метро
-\`\`\`
-# Все станции СПб автоматически
+## Выбор станций метро:
+-Все станции СПб автоматически
 metros = metro_parser.metro_stations
 
-# Или выборочно
+-или выборочно
 selected_metros = ["devyatkino", "nevskiy-prospekt", "moskovskaya"]
-\`\`\`
-## 🗄️ БАЗА ДАННЫХ
+
+# 🗄️ БАЗА ДАННЫХ
 
 ### Структура таблицы
 | Поле | Тип | Описание |
@@ -146,33 +133,18 @@ selected_metros = ["devyatkino", "nevskiy-prospekt", "moskovskaya"]
 # 🚨 РЕШЕНИЕ ПРОБЛЕМ
 
 ## Ошибка подключения к БД
-\`\`\`
-### Проверьте настройки в config.py
-### Убедитесь что PostgreSQL запущен
-### Проверьте логин и пароль
-\`\`\`
+ *Проверьте настройки в config.py
+ *Убедитесь что PostgreSQL запущен
+ *Проверьте логин и пароль
+## Ошибка "Element not found":
+*CIAN изменил структуру сайта
+*Обновите CSS-селекторы в DetailParser
+## Блокировка IP:
+ *Добавьте задержки между запросами
+ *Используйте прокси-серверы
+ *Регулируйте скорость парсинга
 
-## Ошибка "Element not found"
-\`\`\`
-### CIAN изменил структуру сайта
-### Обновите CSS-селекторы в DetailParser
-\`\`\`
-
-## Блокировка IP
-\`\`\`
-### Добавьте задержки между запросами
-### Используйте прокси-серверы
-### Регулируйте скорость парсинга
-\`\`\`
-
-## 📈 СТАТИСТИКА И МОНИТОРИНГ
-\`\`\`
-### Проверить статистику базы
-python cian_parser_28.py
-### Выберите пункт меню: 4. Проверить статистику базы
-\`\`\`
-
-## 🔄 РАБОЧИЙ ПРОЦЕСС
+#🔄 РАБОЧИЙ ПРОЦЕСС
 
 ## Этап 1 - Сбор ID:
 - Запустить сбор по нужным станциям метро
@@ -188,11 +160,11 @@ python cian_parser_28.py
 - **Мало объявлений** - увеличьте \`MAX_PAGES_PER_METRO\`
 
 ## Для разработчиков:
-\`\`\`bash
+bash
 pip install -e .
 
 
-## 📄 ЛИЦЕНЗИЯ https://github.com/elyfaUniverse/cian_parser_project/blob/main/LICENSE.txt
+### 📄 ЛИЦЕНЗИЯ https://github.com/elyfaUniverse/cian_parser_project/blob/main/LICENSE.txt
 
 Проект распространяется под лицензией MIT. Используйте ответственно.
 
@@ -201,8 +173,8 @@ pip install -e .
 **Версия:** 1.0  
 **Последнее обновление:** 18.12.2025
 
-💡 *Парсер создан для образовательных целей. Соблюдайте правила использования сайта CIAN.*
-EOF
+💡 *Парсер создан для образовательных целей. Соблюдайте правила использования сайта CIAN.RU*
+
 
 
 
