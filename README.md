@@ -63,30 +63,30 @@ python cian_parser_28.py
 | \`README.md\` | Документация |
 | \`.gitignore\` | Исключения Git |
 
-## 🔧 КЛЮЧЕВЫЕ КЛАССЫ
+# 🔧 КЛЮЧЕВЫЕ КЛАССЫ
 
-## MetroParser
+### MetroParser
 \`\`\`
 # Парсер станций метро Санкт-Петербурга
 metro = MetroParser()
 metro.display_metro_stations()  # Показать все станции
 \`\`\`
 
-## IDCollector (Этап 1)
+### IDCollector (Этап 1)
 \`\`\`
 ## Сбор ID объявлений по станциям метро
 collector = IDCollector()
 ids = collector.run_collection(metros_to_process=["devyatkino", "grazhdanskiy-prospekt"])
 \`\`\`
 
-## DetailParser (Этап 2)
+### DetailParser (Этап 2)
 \`\`\`
-## Детальный парсинг собранных объявлений
+### Детальный парсинг собранных объявлений
 parser = DetailParser()
 parser.run_parsing(offers, max_total=1000)
 \`\`\`
 
-## 📊 СОБИРАЕМЫЕ ДАННЫЕ
+### 📊 СОБИРАЕМЫЕ ДАННЫЕ
 | Поле | Тип | Описание |
 |------|-----|----------|
 | cian_id | VARCHAR | Уникальный ID объявления |
@@ -100,11 +100,11 @@ parser.run_parsing(offers, max_total=1000)
 | type_building | VARCHAR | Тип дома (кирпичный, панельный) |
 | floor_current | VARCHAR | Этаж (формат "X из Y") |
 
-## ⚙️ НАСТРОЙКИ ПАРСИНГА
+# ⚙️ НАСТРОЙКИ ПАРСИНГА
 
 ## Лимиты и задержки
 \`\`\`
-# В коде можно настроить:
+### В коде можно настроить:
 MAX_PAGES_PER_METRO = 50      # Максимум страниц на станцию
 DELAY_BETWEEN_REQUESTS = 2.5  # Задержка между запросами (сек)
 MAX_TOTAL_OFFERS = 5000       # Максимум объявлений для парсинга
@@ -145,7 +145,7 @@ selected_metros = ["devyatkino", "nevskiy-prospekt", "moskovskaya"]
 | updated_at | TIMESTAMP | Дата обновления |
 | last_checked | TIMESTAMP | Дата последней проверки |
 
-## 🚨 РЕШЕНИЕ ПРОБЛЕМ
+# 🚨 РЕШЕНИЕ ПРОБЛЕМ
 
 ## Ошибка подключения к БД
 \`\`\`
@@ -205,6 +205,7 @@ pip install -e .
 
 💡 *Парсер создан для образовательных целей. Соблюдайте правила использования сайта CIAN.*
 EOF
+
 
 
 
