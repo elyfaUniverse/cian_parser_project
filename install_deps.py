@@ -3,12 +3,11 @@ import subprocess
 import sys
 
 def install_dependencies():
-    """Установка необходимых библиотек"""
     
     packages = [
         'selenium',
         'beautifulsoup4',
-        'lxml',  # Для быстрого парсинга
+        'lxml', 
     ]
     
     print("📦 Установка зависимостей...")
