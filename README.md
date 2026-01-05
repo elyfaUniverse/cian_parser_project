@@ -66,21 +66,21 @@ python cian_parser_28.py
 ## 🔧 КЛЮЧЕВЫЕ КЛАССЫ
 
 ## MetroParser
-\`\`\`python
+\`\`\`
 # Парсер станций метро Санкт-Петербурга
 metro = MetroParser()
 metro.display_metro_stations()  # Показать все станции
 \`\`\`
 
 ## IDCollector (Этап 1)
-\`\`\`python
+\`\`\`
 ## Сбор ID объявлений по станциям метро
 collector = IDCollector()
 ids = collector.run_collection(metros_to_process=["devyatkino", "grazhdanskiy-prospekt"])
 \`\`\`
 
 ## DetailParser (Этап 2)
-\`\`\`python
+\`\`\`
 ## Детальный парсинг собранных объявлений
 parser = DetailParser()
 parser.run_parsing(offers, max_total=1000)
@@ -103,7 +103,7 @@ parser.run_parsing(offers, max_total=1000)
 ## ⚙️ НАСТРОЙКИ ПАРСИНГА
 
 ## Лимиты и задержки
-\`\`\`python
+\`\`\`
 # В коде можно настроить:
 MAX_PAGES_PER_METRO = 50      # Максимум страниц на станцию
 DELAY_BETWEEN_REQUESTS = 2.5  # Задержка между запросами (сек)
@@ -111,7 +111,7 @@ MAX_TOTAL_OFFERS = 5000       # Максимум объявлений для п�
 \`\`\`
 
 ## Выбор станций метро
-\`\`\`python
+\`\`\`
 # Все станции СПб автоматически
 metros = metro_parser.metro_stations
 
@@ -148,27 +148,27 @@ selected_metros = ["devyatkino", "nevskiy-prospekt", "moskovskaya"]
 ## 🚨 РЕШЕНИЕ ПРОБЛЕМ
 
 ## Ошибка подключения к БД
-\`\`\`python
+\`\`\`
 ### Проверьте настройки в config.py
 ### Убедитесь что PostgreSQL запущен
 ### Проверьте логин и пароль
 \`\`\`
 
 ## Ошибка "Element not found"
-\`\`\`python
+\`\`\`
 ### CIAN изменил структуру сайта
 ### Обновите CSS-селекторы в DetailParser
 \`\`\`
 
 ## Блокировка IP
-\`\`\`python
+\`\`\`
 ### Добавьте задержки между запросами
 ### Используйте прокси-серверы
 ### Регулируйте скорость парсинга
 \`\`\`
 
 ## 📈 СТАТИСТИКА И МОНИТОРИНГ
-\`\`\`python
+\`\`\`
 ### Проверить статистику базы
 python cian_parser_28.py
 ### Выберите пункт меню: 4. Проверить статистику базы
@@ -205,6 +205,7 @@ pip install -e .
 
 💡 *Парсер создан для образовательных целей. Соблюдайте правила использования сайта CIAN.*
 EOF
+
 
 
 
