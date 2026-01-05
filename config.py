@@ -30,7 +30,7 @@ PARSER_CONFIG = {
     ]
 }
 
-# CSS-селекторы для CIAN (могут меняться!)
+# CSS-селекторы для CIAN 
 SELECTORS = {
     'listing_card': 'article[data-name="CardComponent"]',
     'title': 'h1[data-name="OfferTitle"]',
@@ -50,7 +50,7 @@ DB_CONFIG = {
     'host': 'localhost',
     'database': 'cian_parser',
     'user': 'parser_user',
-    'password': 'Mamba123',  # Замените на ваш
+    'password': 'Pasword',  
     'port': '5432'
 }
 
