@@ -1,28 +1,18 @@
-#!/usr/bin/env python3
+"""Установка зависимостей проекта в выбранное окружение Python."""
+
+from pathlib import Path
 import subprocess
 import sys
 
+
 def install_dependencies():
-    
-    packages = [
-        'selenium',
-        'beautifulsoup4',
-        'lxml', 
-    ]
-    
-    print("📦 Установка зависимостей...")
-    
-    for package in packages:
-        print(f"   Устанавливаю {package}...")
-        try:
-            subprocess.check_call([sys.executable, "-m", "pip", "install", package])
-            print(f"   ✅ {package} установлен")
-        except subprocess.CalledProcessError:
-            print(f"   ❌ Не удалось установить {package}")
-    
-    print("\n✅ Все зависимости установлены!")
-    print("\nТеперь можно запустить тестовый парсер:")
-    print("python test_cian_parser.py")
+    requirements = Path(__file__).with_name("requirements.txt")
+    subprocess.run(
+        [sys.executable, "-m", "pip", "install", "-r", str(requirements)],
+        check=True,
+    )
+    print("Зависимости проекта установлены.")
+
 
 if __name__ == "__main__":
     install_dependencies()

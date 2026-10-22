@@ -1,37 +1,38 @@
- 'EOF'
-# Python cache
+# Python
 __pycache__/
-*.pyc
-*.pyo
+*.py[cod]
+.pytest_cache/
 
-# Virtual Environment
+# Virtual environments
 venv/
 .venv/
 env/
-Include/
-Lib/
-Scripts/
-pyvenv.cfg
+/Include/
+/Lib/
+/Scripts/
+/pyvenv.cfg
 
-# Database files (большие, не в Git)
+# Local data and credentials
+.env
+.env.*
+!.env.example
 *.db
+*.sqlite
 *.sqlite3
+*.log
+logs/
 
-# Chrome Driver (скачивается автоматически)
+# Downloaded browser drivers
 chromedriver*
 geckodriver*
 
-# IDE
-.vscode/
+# Editor settings
 .idea/
+.vscode/*
+!.vscode/settings.json
 *.swp
 *.swo
 
-# System
+# System files
 .DS_Store
 Thumbs.db
-
-# Logs
-*.log
-logs/
-EOF
